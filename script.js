@@ -52,8 +52,43 @@ function addCommentEvents() {
   });
 }
 
+function replaceFullname() {
+  const nameInput = document.getElementById('input-name');
+  const lastnameInput = document.getElementById('input-lastname');
+  const newParagraph = document.createElement('p');
+  newParagraph.innerText = `Nome: ${nameInput.value} ${lastnameInput.value}`;
+  return newParagraph;
+}
+
+function clearForm() {
+  const form = document.getElementById('evaluation-form');
+  form.innerHTML = '';
+}
+
+function appendToForm(argsList) {
+  const form = document.getElementById('evaluation-form');
+  for (let i = 0; i < argsList.length; i += 1) {
+    form.appendChild(argsList[i]);
+  }
+}
+
+function replaceForm() {
+  const fullName = replaceFullname();
+  clearForm();
+  appendToForm([fullName]);
+}
+
+function addSubmitButtonEvents() {
+  const submitButton = document.getElementById('submit-btn');
+  submitButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    replaceForm();
+  });
+}
+
 window.onload = () => {
   addFormEvents();
   addAgreementEvent();
   addCommentEvents();
+  addSubmitButtonEvents();
 };
