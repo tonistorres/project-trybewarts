@@ -104,6 +104,11 @@ function replaceRate() {
   return createParagraph('Avaliação:', rate.value);
 }
 
+function replaceComment() {
+  const comment = document.getElementById('textarea');
+  return createParagraph('Observações:', comment.value);
+}
+
 function clearForm() {
   const form = document.getElementById('evaluation-form');
   form.innerHTML = '';
@@ -123,6 +128,7 @@ function replaceForm() {
   const family = replaceFamily();
   const content = replaceContent();
   const rate = replaceRate();
+  const comment = replaceComment();
   clearForm();
   appendToForm([
     fullName,
@@ -131,6 +137,7 @@ function replaceForm() {
     family,
     content,
     rate,
+    comment,
   ]);
 }
 
