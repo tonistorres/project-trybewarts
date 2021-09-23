@@ -79,6 +79,26 @@ function replaceFamily() {
   return createParagraph('Família:', family.value);
 }
 
+function createContentValue(idsList) {
+  const contentValueList = [];
+  for (let i = 0; i < idsList.length; i += 1) {
+    const element = document.getElementById(idsList[i]);
+    if (element.checked) contentValueList.push(element.value);
+  }
+  return contentValueList.join(', ');
+}
+
+function replaceContent() {
+  return createParagraph('Matérias:', createContentValue([
+    'hofs',
+    'jest',
+    'promises',
+    'react',
+    'sql',
+    'python',
+  ]));
+}
+
 function clearForm() {
   const form = document.getElementById('evaluation-form');
   form.innerHTML = '';
@@ -96,12 +116,14 @@ function replaceForm() {
   const email = replaceEmail();
   const house = replaceHouse();
   const family = replaceFamily();
+  const content = replaceContent();
   clearForm();
   appendToForm([
     fullName,
     email,
     house,
     family,
+    content,
   ]);
 }
 
