@@ -52,12 +52,26 @@ function addCommentEvents() {
   });
 }
 
+function createParagraph(prefix, value) {
+  const newParagraph = document.createElement('p');
+  newParagraph.innerText = `${prefix} ${value}`;
+  return newParagraph;
+}
+
 function replaceFullname() {
   const nameInput = document.getElementById('input-name');
   const lastnameInput = document.getElementById('input-lastname');
-  const newParagraph = document.createElement('p');
-  newParagraph.innerText = `Nome: ${nameInput.value} ${lastnameInput.value}`;
-  return newParagraph;
+  return createParagraph('Nome:', `${nameInput.value} ${lastnameInput.value}`);
+}
+
+function replaceEmail() {
+  const emailInput = document.getElementById('input-email');
+  return createParagraph('Email:', emailInput.value);
+}
+
+function replaceHouse() {
+  const house = document.getElementById('house');
+  return createParagraph('Casa:', house.value);
 }
 
 function clearForm() {
@@ -74,8 +88,10 @@ function appendToForm(argsList) {
 
 function replaceForm() {
   const fullName = replaceFullname();
+  const email = replaceEmail();
+  const house = replaceHouse();
   clearForm();
-  appendToForm([fullName]);
+  appendToForm([fullName, email, house]);
 }
 
 function addSubmitButtonEvents() {
