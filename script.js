@@ -99,6 +99,11 @@ function replaceContent() {
   ]));
 }
 
+function replaceRate() {
+  const rate = document.querySelector('input[name="rate"]:checked');
+  return createParagraph('Avaliação:', rate.value);
+}
+
 function clearForm() {
   const form = document.getElementById('evaluation-form');
   form.innerHTML = '';
@@ -117,6 +122,7 @@ function replaceForm() {
   const house = replaceHouse();
   const family = replaceFamily();
   const content = replaceContent();
+  const rate = replaceRate();
   clearForm();
   appendToForm([
     fullName,
@@ -124,6 +130,7 @@ function replaceForm() {
     house,
     family,
     content,
+    rate,
   ]);
 }
 
