@@ -74,6 +74,11 @@ function replaceHouse() {
   return createParagraph('Casa:', house.value);
 }
 
+function replaceFamily() {
+  const family = document.querySelector('input[name="family"]:checked');
+  return createParagraph('Família:', family.value);
+}
+
 function clearForm() {
   const form = document.getElementById('evaluation-form');
   form.innerHTML = '';
@@ -90,8 +95,14 @@ function replaceForm() {
   const fullName = replaceFullname();
   const email = replaceEmail();
   const house = replaceHouse();
+  const family = replaceFamily();
   clearForm();
-  appendToForm([fullName, email, house]);
+  appendToForm([
+    fullName,
+    email,
+    house,
+    family,
+  ]);
 }
 
 function addSubmitButtonEvents() {
