@@ -20,6 +20,7 @@
 .trybewarts-login {
   display: flex;
   flex-basis: 45%;
+  max-width: 25rem;
   justify-content: space-around;
   align-items: center;
   gap: 0.7rem;
