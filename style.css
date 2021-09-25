@@ -4,12 +4,20 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(235, 235, 235);
+}
+
 .header {
   display: flex;
   background-color: rgb(50, 167, 145);
   justify-content: space-between;
   align-items: center;
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .trybewarts-header-logo {
@@ -47,20 +55,22 @@ button {
 
 main {
   display: flex;
-  background-color: rgb(235, 235, 235);
   justify-content: space-evenly;
   align-items: center;
+  margin: 4rem 0;
 }
 
 #evaluation-form {
   display: flex;
   flex-direction: column;
   width: 675px;
+  margin: 0 2rem;
 }
 
 #evaluation-form-title {
   padding: 1rem;
   align-self: center;
+  text-align: center;
 }
 
 .personal-data {
@@ -140,4 +150,16 @@ hr {
 
 .agreement-container {
   margin: 1rem 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(60,65,75);
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  color: white;
+  height: 3rem;
 }
