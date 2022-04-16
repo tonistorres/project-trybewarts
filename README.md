@@ -9,3 +9,6 @@
   
 ### Proposta:
 > Desenvolver uma página de formulário da Escola de Magia de Trybewarts, em que as pessoas estudantes poderão enviar seus feedbacks sobre ela.
+
+### OBSERVAÇÃO: 
+> Projeto desenvolvido em parceria com Israel Sant'Anna.
